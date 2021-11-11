@@ -1,0 +1,23 @@
+<% include partials/header %> 
+
+<main class="w-full h-screen flex justify-center items-center" style="background-image: url(/images/background.gif); background-repeat: no-repeat; background-size: cover;">
+    <div class="w-4/12">
+        <form action="/users/register/new" method="POST" enctype="multipart/form-data" class="py-16 px-8 border-2 rounded-lg bg-white relative">
+            <h2 class="text-lg">Register With Your Details</h2>
+            <% if(error) { %>
+                <p class="text-red-500 "><%= error %></p>
+            <% } %>
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="text" name="name" id="" placeholder="Enter Your Name">
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="email" name="email" placeholder="Enter your email">
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="Number" name="age" placeholder="Enter your Age">
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="text" name="phone" placeholder="Enter Your phone Number">
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="text" name="country" id="" placeholder="Enter your Country">
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="password" name="password" placeholder="Enter your Password">
+            <input type="file" name="photo" id="" class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4">
+            <!-- <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="submit"> -->
+            <a href="/users/login" class=" w-full py-3 text-center right-10 mt-2 border-2 text-white py-1 px-4 bg-black rounded-lg  block w-2/12">
+                Register
+            </a>
+        </form>
+    </div>
+</main>

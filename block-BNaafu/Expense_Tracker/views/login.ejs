@@ -1,0 +1,23 @@
+<% include partials/header %> 
+
+<main class="w-full h-screen flex justify-center items-center" style="background-image: url(/images/background.gif); background-repeat: no-repeat; background-size: cover;">
+    <div class="w-4/12">
+        <form action="/users/login" method="POST" class="py-16 px-8 border-2 rounded-lg bg-white relative">
+            <h2>Login With Your Details</h2>
+            <% if(error) {%>
+                <p class="text-red-400"><%=error  %> </p>
+            <% } %> 
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="email" name="email" placeholder="Enter your email">
+            <input class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4" type="password" name="password" placeholder="Enter your Password">
+            <input type="submit" class="w-full py-3 outline-none px-4 border-2 rounded-lg mt-4">
+            <div class="flex items-center mt-6">
+                <a href="/users/register/new" class="border-2 text-white py-1 px-4 bg-black rounded-lg">
+                    Register
+                </a>
+                <a class="ml-4" href="/users/login/forgotpassword">Forgot password ?</a>
+            </div>
+        </form>
+    </div>
+</main>
+
+<% include partials/footer %> 
