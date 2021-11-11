@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+<main class="w-full h-screen flex justify-center items-center" style="background-image: url(/images/background.gif); background-repeat: no-repeat; height: 91vh; background-size: cover;">
+  <div class="bg-white rounded-lg px-6 m-auto  shadow-lg  border-gray-50 ">
+    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_rqes9zyp.json"  background="transparent"  speed="1"  style="width: 300px; height: 150px;"  loop autoplay class="rounded-full"></lottie-player>
+    <h1 class="text-xl text-center  text-indigo-500" >Add Income</h1>
+    <section class="" >
+      <form action="/client/income" method="POST" class=" p-5 flex flex-col" >
+        <% if(info) { %>
+          <legend class="text-green-500 font-bold"><%= info %></legend>
+      <%} %>
+      <input type="text" placeholder="Income Name" name="incname" class="p-2 border border-grey-500 mb-5 rounded-lg" />
+        <input type="text" placeholder="Source" name="sources" class="p-2 border border-grey-500 mb-5 rounded-lg" />
+        <input type="number" placeholder="Amount" name="amount" class="p-2 border border-grey-500 mb-5 rounded-lg" />
+        <input type="date" name="date" class="p-2 border border-grey-500 mb-5 rounded-lg" />
+        <input type="submit" value="Add Income" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-3  rounded-lg" />
+        <a class="border-2  w-8/12 mt-4 bg-black text-white shadow-md rounded-lg  text-center py-1 px-3" href="/client/statementList">
+          View All Records
+        </a>
+      </form>
+      
+    </section>
+  </div>
+</main>
+
+

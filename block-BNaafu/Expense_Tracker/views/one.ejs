@@ -1,0 +1,21 @@
+<% include partials/header %> 
+    
+    <main class="w-full h-screen flex justify-center items-center" style="background-image: url(/images/background.gif); background-repeat: no-repeat; background-size: cover;">
+        <div class="">
+            <h2 class="text-center text-3xl  mb-10 font-bold" >Welcome <%= user.name %></h2>
+            <div>
+                <% if(user.photo.includes('http')){%>
+                    <img class="block m-auto rounded-full w-4/12" src="<%=user.photo  %> " alt="">
+                <%}else{%>
+                    <img class="block m-auto rounded-full w-4/12 h-3/6" src="/uploads/<%=user.photo%> " alt="">
+                <%} %> 
+                <div class="text-center mt-12">
+                    <a href="/client/income/new" class="mx-2 bg-green-500 text-white font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">Add Incomes</a>
+                    <a href="/client/expense/new"  class="mx-2 bg-red-500 text-white font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">Add Expenses</a>
+                    <a href="/client/statementList"  class="mx-2  bg-yellow-500 text-white font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">View All Records</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+<% include partials/footer %> 

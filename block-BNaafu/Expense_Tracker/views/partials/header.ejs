@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://kit.fontawesome.com/c6f9fe3736.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+  <header class="header_section">
+        <% if(user) { %>
+          <nav class="flex justify-center items-center">
+            <a href="/">
+              <button class="font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">HOME</button>
+            </a>
+           
+            <a href="/users/login">
+                <button class="font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">Login</button>
+            </a>
+              
+            <a href="/users/register">
+              <button class="font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">Register</button>
+            </a>
+
+            <a href="/users/logout">
+              <button class="font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">Logout</button>
+            </a>
+          </nav>
+        <% } %>
+    </header>
+  </body>
+</html>

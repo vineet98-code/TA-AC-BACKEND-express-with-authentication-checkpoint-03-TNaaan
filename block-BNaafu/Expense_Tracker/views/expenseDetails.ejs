@@ -1,0 +1,22 @@
+
+<%- include('partials/header') %>
+<main class="w-full h-screen flex justify-center items-center" style="background-image: url(/images/background.gif); background-repeat: no-repeat; height: 91vh; background-size: cover;">
+    <div class="bg-white w-7/12 rounded-lg px-6 py-8 m-auto flex justify-between shadow-lg  border-gray-50 ">
+        <section class="w-full">
+            <h2 class="text-center text-4xl font-bold my-8">Expense Details Page</h2>
+            <div class=" bg-white shadow-lg border-gray-200 border p-8 mx-auto rounded-lg">
+                <h2 class="text-3xl font-bold my-2"><%= expense.expname %></h2>
+                <!-- <% expense.category.forEach(e => { %>
+                <h2 class="inline-block text-xl bg-gray-500 text-white p-1 rounded-md"><span><%= e %></span></h2>
+                <% }) %> -->
+                <h2 class="text-xl my-2"><span class="text-2xl font-bold">Date: </span><%= date %></h2>
+                <h2 class="text-xl my-2"> <span class="text-2xl font-bold">Amount: </span> <%= expense.amount %></h2>
+                <div class="mt-4">
+                    <a href="/expense/<%= expense.id %>/edit" class="bg-green-500 px-4 text-center hover:bg-gray-400 p-2 text-white font-bold rounded-md">Edit</a>
+                    <a href="/expense/<%= expense.id %>/delete" class="bg-red-500  ml-4 text-center hover:bg-gray-400 p-2 text-white font-bold rounded-md">Delete</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+

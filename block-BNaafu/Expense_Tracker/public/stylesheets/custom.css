@@ -1,0 +1,23 @@
+.details{
+    display: none;
+    position: absolute;
+    top: 3.9rem;
+    right: 0rem;
+    background: rgb(30,59,138);
+    padding: 2rem 0.5rem;
+    line-height: 2;
+    color: white;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.imageHover{
+    cursor: pointer;
+}
+.imageHover:hover ~ .details{
+    display: block;
+    cursor: pointer;
+}
+.details:hover{
+    display: block;
+    cursor: pointer;
+}
