@@ -1,0 +1,68 @@
+<% include partials/header %>
+
+<main class=" flex justify-center items-center" style="background-image: url(/images/background.gif); background-repeat: no-repeat; background-size: cover; width: 100%;">
+    <div class="shadow-2xl">
+
+         <h2 class="text-4xl font-bold text-center mt-8">Savings : <span class="text-green-600"><%= savings %></span></h2>
+            
+        <section class="flex justify-around">        
+            <div class="flex my-8 mx-8 flex-col w-1/3 items-center">
+                <form action="/client/statementList/filterByDate" method="GET" class="flex flex-col p-12 border-2 border-gray-300 rounded-lg mb-10 bg-white">
+                    <h2 class="my-1 text-xl font-bold">Filter By Date</h2>
+                    <input type="date" name="startDate" class="p-2  my-1 rounded-lg border-2 mt-3 border-gray-300">
+                    <input type="date" name="endDate" class="p-2  my-1 rounded-lg border-2 mt-3 border-gray-300">
+                    <input type="submit" value="Search" class="p-2 bg-black text-white font-bold my-1 mt-3 rounded-lg ">
+                </form>
+               
+                <form action="/client/statementList/filterByMonth" method="get" class="flex flex-col p-8 border-2 border-gray-300 rounded-lg mb-10 bg-white">
+                    <h2 class="my-1 text-xl font-bold">Filter By Month</h2>
+                    <input type="month" name="month" class="p-2  my-1 rounded-lg border-2 border-gray-300">
+                    <input type="submit" value="search" class="p-2 bg-black text-white font-bold my-1 rounded-lg ">
+                </form>
+               
+                <div class="text-center mt-6 flex">
+                    <a href="/client/expense/new"  class="mx-2 bg-red-500 text-white font-bold p-1 px-2 transition:all text-xl rounded-lg hover:bg-gray-400">Add Expenses</a>
+                    <a href="/client/income/new" class="mx-2 bg-green-500 text-white font-bold p-2 px-4 transition:all text-xl rounded-lg hover:bg-gray-400">Add Incomes</a>
+                    <a href="/client/statementList" class="bg-red-500 hover:bg-red-700 text-white font-bold p-2 rounded-lg text-xl">Reset Filters</a>
+                </div>
+            </div>
+        
+            <section class="my-8 flex flex-col items-center">
+                <% incomes.forEach(i => { %>
+                    <div class="bg-white p-8 my-3 rounded-lg flex justify-between items-center mx-auto text-xl w-full">
+                        <h2 class="font-bold mr-5"><%= i.incname %></h2>
+                        <h2 class="font-bold mr-5"><%= i.amount %></h2>
+                        <a href="/income/<%= i.id %>" class="px-2 py-1 bg-blue-700 text-white font-bold hover:bg-blue-600 rounded-lg">Show Details</a>
+                    </div>
+                    
+                <% }) %>
+                <% expenses.forEach(i => { %>
+                    <div class="bg-red-600 text-white p-8 my-3 mx-auto rounded-lg flex justify-between text-xl w-full">
+                        <h2 class="font-bold"><%= i.expname %></h2>
+                        <h2 class="font-bold"><%= i.amount %></h2>
+                        <a href="/expense/<%= i.id %>" class="px-2 py-1 bg-blue-700 text-white font-bold hover:bg-blue-600 rounded-lg">Show Details</a>
+                    </div>
+                    
+                <% }) %>
+                <% if(balance) {%>
+                    <h2 class="text-4xl text-white  font-bold text-center mt-8">Savings from the Search results: <span class="text-green-500"><%= balance %></span></h2>
+                <% } %>
+                <% if((expenses.length) === 0 && (incomes.length === 0)) { %>
+                    <h1 class="text-center text-3xl font-bold">No Records Available</h1>
+                <% } %>
+            </section>    
+        </section>
+    </div>
+</main>
+
+<% include('partials/footer') %>
+
+
+
+
+
+
+
+
+
+
